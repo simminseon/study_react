@@ -43,46 +43,46 @@ import React, { useState } from 'react';
 
 
 
-function Test() {
-    const [toggleText, setToggleText] = useState(false);
-    
-    function handleClick() {
-        setToggleText(!toggleText);
-    }
-
-    return <TestButton event={handleClick} text={toggleText} /> 
-}
-
-function TestButton({event, text}) {
-    const isToggleText = text ? "OFF" : "ON";
-
-    return (
-        <button onClick={event}>
-            {isToggleText}
-        </button>
-    );
-}
-
-// --------------------------------------------------------------
-
 // function Test() {
 //     const [toggleText, setToggleText] = useState(false);
-//     const isToggleText = toggleText ? "OFF" : "ON";
-//     const exportToggle = {event: handleClick, text: isToggleText}
-
+    
 //     function handleClick() {
 //         setToggleText(!toggleText);
 //     }
 
-//     return <TestButton {...exportToggle} /> 
+//     return <TestButton event={handleClick} text={toggleText} /> 
 // }
 
 // function TestButton({event, text}) {
+//     const isToggleText = text ? "OFF" : "ON";
+
 //     return (
 //         <button onClick={event}>
-//             {text}
+//             {isToggleText}
 //         </button>
 //     );
 // }
+
+// --------------------------------------------------------------
+
+function Test() {
+    const [textToggle, setTextToggle] = useState(false);
+    const setExport = {onClick: handleClick, text: textToggle};
+    
+    function handleClick() {
+        setTextToggle(!textToggle);
+    }
+
+    return <TestButton {...setExport} />
+}
+
+function TestButton({onClick, text}) {
+    const isTextToggle = text ? "OFF" : "ON"
+    return(
+        <button text={isTextToggle} onClick={onClick}>
+            {isTextToggle}
+        </button>
+    );
+}
 
 export default Test;

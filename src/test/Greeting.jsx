@@ -8,9 +8,8 @@ function GuestGreeting() {
     return <h1>Please sign up.</h1>;
 }
 
-function Greeting(props) {
-    const isLoggedIn = props.isLoggedIn;
-    if(isLoggedIn) {
+function Greeting({stateLogin}) {
+    if(stateLogin) {
         return <UserGreeting />;
     }
     return <GuestGreeting />;
