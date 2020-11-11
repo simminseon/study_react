@@ -2,10 +2,12 @@ import React from 'react';
 import Square from './Square';
 
 
+// 보드판을 표시한다. 이벤트 및 필요 값들은 부모 컴포넌트를 통해 공급받는다.
 function SquareBoard({selectedBoard, onClick}) { 
   return (
     <div>
       <div className="board-row">
+        {/* 해당 보드의 값과 인덱스, 온클릭 이벤트를 전달한다 */}
         <Square value={selectedBoard[0]} index={0} onClick={onClick} />
         <Square value={selectedBoard[1]} index={1} onClick={onClick} />
         <Square value={selectedBoard[2]} index={2} onClick={onClick} />
