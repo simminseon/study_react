@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 리액트 기초 프로젝트에 대하여
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+리액트로 개발할 수 있도록 입문 하는 과정입니다.  
+단순 입문은 리액트 공식 사이트를 통해 가능합니다.  
+이 프로젝트에서는 실제 프로젝트 방식으로 웹 앱을 구현하는게 목표 입니다.  
 
-## Available Scripts
+## 진행방식
 
-In the project directory, you can run:
+개인 참여 주도형 프로젝트로 진행 될 예정입니다.  
+프로젝트에서 제공되는 것과 스스로 해야 할 것들이 있습니다.  
+참여 신청전에 아래 내용을 확인하세요.
 
-### `npm start`
+### 제공되는 것
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 프로젝트 전체의 기획, 설계, 진행 방향
+- 상태관리에 대한 가이드
+- 실무 프로젝트 간접 경험(네이밍 룰, 컴포넌트 적용 방식)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 혼자 해야되는 것
 
-### `npm test`
+- 리액트 전반에 걸친 기초 학습(jsx~hooks까지)
+- 자바스크립트에 대한 심화 학습
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 참석 요구사항
 
-### `npm run build`
+- Javascript에 대한 이해(es6+)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 기술
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- create-react-app
+- react - 17.0.0
+- redux-toolkit
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 기간
 
-### `npm run eject`
+- 개인학습 40~60H
+- 개발 가이드 10H
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 다룰 내용
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### SPA
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 일반 HTML과의 차이점
+- 왜 SPA를?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### React
 
-## Learn More
+- React/Vue/Angular에 대한 훑어보기
+- 왜 리액트를?
+- JSX에 대하여
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Component
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 나눠야 하는 이유
+- 재사용은 어디까지
+- 데이터의 전달
 
-### Code Splitting
+### hooks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- useState
+- useEffect
+- useCallback
+- useMemo
 
-### Analyzing the Bundle Size
+### store & state
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 모든건 결국 데이터
+- 불변성에 대하여
+- 컴포넌트가 많아지면
+- dispatch
+- action
+- mutation
