@@ -48,3 +48,7 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+.tbl_product{border-collapse:collapse;border-spacing:0;}
+.tbl_product th{border:1px solid #f00}
+.tbl_product td{border:1px solid #f00}

@@ -6,6 +6,7 @@ import { Main } from '@/features/main';
 import { Header } from '@/features/header';
 import { Home } from './components/Home';
 import { Tictactoe } from '@/features/tictactoe';
+import { Product } from '@/features/Product';
 import store from '@/app/store';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Home />
       <Tictactoe />
+      <Product />
     </Provider>
   );
 }

@@ -5,15 +5,5 @@ import { tictactoeAction, tictactoeSelector } from '@/features/tictactoe/Tictact
 
 
 export function Header() {
-  const dispatch = Redux.useDispatch();
-  const resetSelector = Redux.useSelector(tictactoeSelector.resetSelector);
-
-
-  const handleReset = () => {
-    console.log("resetSelector", resetSelector);
-    dispatch(tictactoeAction.resetPlay(handleReset));
-  }
-  return (
-    <button onClick={handleReset}>reset</button>
-  );
+  return <div>header</div>;
 }
