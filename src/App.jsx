@@ -7,6 +7,7 @@ import { Header } from '@/features/header';
 import { Home } from './components/Home';
 import { Tictactoe } from '@/features/tictactoe';
 import { Product } from '@/features/Product';
+import { Tictactoe2 } from './tictactoe2/Tictactoe2';
 import store from '@/app/store';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Home />
       <Tictactoe />
       <Product />
+      <Tictactoe2 />
     </Provider>
   );
 }
