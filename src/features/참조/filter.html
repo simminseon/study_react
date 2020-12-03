@@ -1,0 +1,30 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <script>
+        // 기본 소스
+        // 배열.filter((값, 인덱스, 배열) => {return 요소});
+
+        // 콜백함수에 지정된 조건에 맞는 요소를 새롭게 반환한다.
+
+        let data = [
+            {name: 'sim', age: 20},
+            {name: 'kim', age: 25},
+            {name: 'lee', age: 19}
+        ]
+        let result = data.filter(x => {
+            return x.age >= 20;
+        });
+        console.log(result);
+
+        let result2 = data.filter((x, idx, arr) => {
+            return idx === 0 && x.age >= 20
+        });
+        console.log(result2)
+    </script>
+</body>
+</html>

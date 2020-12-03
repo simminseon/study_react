@@ -7,7 +7,9 @@ import { Header } from '@/features/header';
 import { Home } from './components/Home';
 import { Tictactoe } from '@/features/tictactoe';
 import { Product } from '@/features/Product';
+import { ClickEx } from '@/features/ClickEx';
 import { Tictactoe2 } from './tictactoe2/Tictactoe2';
+import { MenuOrder } from './features/menuOrder/MenuOrder';
 import store from '@/app/store';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <Tictactoe />
       <Product />
       <Tictactoe2 />
+      <ClickEx />
+      <MenuOrder />
     </Provider>
   );
 }

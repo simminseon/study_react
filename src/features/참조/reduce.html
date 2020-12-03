@@ -1,0 +1,40 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce</title>
+</head>
+<body>
+    <script>
+        // arr.reduce(callback[, initialValue])
+        // 배열.reduce((누적값, 현재값, 인덱스, 요소) => {return 결과}, 초기값)
+
+        // 1. callback
+        // - previousValue : 마지막 콜백에서 반환된 값 또는 initialValue
+        // - currentValue : 현재 배열 내 처리되고 있는 요소
+        // - currentIndex : 현재 배열 내 처리되고 있는 요소의 인덱스
+        // - array : reduce 호출에 사용되는 원 배열
+
+        // 2. initialValue : callback의 첫 번째 인수의 값에 사용되는 값(default)
+        
+        const arr = [12, 4, 19, 33, 86];
+        const sum = arr.reduce((pre, value, idx, arr) => {
+            return pre + value;
+        });
+        console.log("sum : ", sum);  
+
+        const sum2 = arr.reduce((pre, value, idx, arr) => {
+            return pre + value;
+        }, 10);
+        console.log("sum2 : ", sum2);
+
+        const a = ["a", "b", "c", "c", "d", "a", "b", "c"];
+        const b = a.reduce((pre, value) => {
+            pre[value] = ++pre[value]||1;
+            return pre;
+        }, {})
+        console.log("b : ", b)
+
+    </script>
+</body>
+</html>

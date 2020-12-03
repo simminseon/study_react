@@ -1,0 +1,21 @@
+.ir_caption{overflow:hidden;width:1px;font-size:1px;line-height:0;text-indent:-9999px}
+
+.menu_order{overflow:hidden;width:763px}
+
+/* 메뉴 목록 */
+.board_menu{overflow:hidden;float:left;width:270px;border:1px solid #000;background-color:pink}
+.btn_menu{float:left;width:80px;height:40px;margin:5px;border:1px solid #000;font-size:18px;background-color:#fff}
+
+/* 주문 목록 */
+.board_order{float:left;margin-left:50px}
+.tbl_order{border-spacing:0;border-collapse:collapse;}
+.tbl_order th{height:35px;border:1px solid #000;text-align:center;}
+.tbl_order td{height:35px;border:1px solid #000;text-align:center;}
+
+/* 주문 상태 */
+.order_status{padding-bottom:10px}
+
+/* 주문 버튼 */
+.group_btn{padding-top:40px;text-align:center}
+.group_btn .btn{width:150px;height:50px;margin:0 5px;border:1px solid #000;font-size:16px;background-color:#fff}
+.group_btn .btn_order{background-color:pink}
