@@ -1,6 +1,6 @@
 .ir_caption{overflow:hidden;width:1px;font-size:1px;line-height:0;text-indent:-9999px}
 
-.menu_order{overflow:hidden;width:763px}
+.menu_order{overflow:hidden;width:764px}
 
 /* 메뉴 목록 */
 .board_menu{overflow:hidden;float:left;width:270px;border:1px solid #000;background-color:pink}
@@ -8,12 +8,18 @@
 
 /* 주문 목록 */
 .board_order{float:left;margin-left:50px}
-.tbl_order{border-spacing:0;border-collapse:collapse;}
-.tbl_order th{height:35px;border:1px solid #000;text-align:center;}
-.tbl_order td{height:35px;border:1px solid #000;text-align:center;}
+.board_order .item{float:left;border-bottom:1px solid #000;line-height:35px;text-align:center;box-sizing:border-box}
+.board_order .item + .item{border-left:1px solid #000}
+.board_order .item_menu{width:160px}
+.board_order .item_quantity{width:100px}
+.board_order .item_price{width:180px}
+.head_order{overflow:hidden;border:1px solid #000;border-bottom:0}
+.order_list{margin:0;padding:0;border-left:1px solid #000;border-right:1px solid #000}
+.order_list li{overflow:hidden;list-style:none;}
 
 /* 주문 상태 */
 .order_status{padding-bottom:10px}
+.order_status .txt_price{font-weight:bold}
 
 /* 주문 버튼 */
 .group_btn{padding-top:40px;text-align:center}

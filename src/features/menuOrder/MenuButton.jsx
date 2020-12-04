@@ -1,7 +1,7 @@
 import { values } from "lodash";
 import * as React from "react";
 
-export function MenuBoard({onClick, menuName, stock}) {
+export function MenuButton({onClick, menuName, stock}) {
     if(stock) {
         return (<button className="btn_menu" key={menuName} onClick={onClick}>{menuName}</button>)
     } 
