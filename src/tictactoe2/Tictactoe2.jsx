@@ -53,7 +53,7 @@ export function Tictactoe2() {
             <Square value={boardData[7]} index={7} onClick={handleClick} />
             <Square value={boardData[8]} index={8} onClick={handleClick} />
         </div>
-        <div classNameg="game-info">
+        <div className="game-info">
             <ol>
                 <li>
                     <button onClick={handleHistory}>dd</button>

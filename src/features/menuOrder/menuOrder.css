@@ -3,11 +3,11 @@
 .menu_order{overflow:hidden;width:764px}
 
 /* 메뉴 목록 */
-.board_menu{overflow:hidden;float:left;width:270px;border:1px solid #000;background-color:pink}
+.board_menu{overflow:hidden;float:left;width:270px;margin-right:50px;border:1px solid #000;background-color:pink}
 .btn_menu{float:left;width:80px;height:40px;margin:5px;border:1px solid #000;font-size:18px;background-color:#fff}
 
 /* 주문 목록 */
-.board_order{float:left;margin-left:50px}
+.board_order{float:left}
 .board_order .item{float:left;border-bottom:1px solid #000;line-height:35px;text-align:center;box-sizing:border-box}
 .board_order .item + .item{border-left:1px solid #000}
 .board_order .item_menu{width:160px}

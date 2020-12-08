@@ -1,11 +1,10 @@
 import * as React from "react";
-import {useEffect} from 'react'
-import { MenuButton } from './MenuButton';
+import { MenuBoard } from './MenuBoard';
 import { OrderList } from './OrderList';
 import { OrderStatus } from './OrderStatus';
 import { Btn } from './Btn';
 import './menuOrder.css'
-import { values } from "lodash";
+import { size, values } from "lodash";
 
 const menuList = [
     {name: '메뉴1', code: 0, price: 5000, stock: true},
@@ -22,15 +21,8 @@ const menuList = [
 
 export function MenuOrder() {
     const [menuData, setMenuData] = React.useState([]);
-    const [price, setPrice] = React.useState([]);
-    const [menuCount, setMenuCount] = React.useState(0)
-
-    useEffect(()=>{
-        // console.log('sumPrice: ', sumPrice)
-        // const test = sumPrice.reduce((pre, val) => pre + val)
-        // console.log(test)
-    },[])
-
+    const [selectedPrice, setSelectedPrice] = React.useState([]);
+    const [test, setTest] = React.useState(0);
     const menuClick = (menu) => {
         const orderedMenuData = {
             name: menu.name,
@@ -38,16 +30,17 @@ export function MenuOrder() {
             price: menu.price,
             count: 1
         }
+        
         const existMenuData = menuData.find(data => data.code === orderedMenuData.code)
         if(existMenuData) {
             const checkedMenuData = menuData.map(data => {
-                const addPrice = data.price * data.count;
+                const addPrice = orderedMenuData.price + data.price;
+
                 if(data.code === orderedMenuData.code) {
                     return {...data, count: data.count + 1, price:addPrice}
                 } else {
                     return data
                 }
-                
             })
             setMenuData(checkedMenuData)
             // increase count
@@ -55,42 +48,42 @@ export function MenuOrder() {
             // add mneuData
             setMenuData([...menuData, orderedMenuData])
         }
-        // console.log(orderedMenuData)
+        
+        const priceData = menuData.map(data => data.price)
+        setSelectedPrice([...priceData, orderedMenuData.price])
     }
+
     console.log("menuData: ", menuData)
-    const sumPrice = price.reduce((pre, val) => {
+    const sumPrice = selectedPrice.reduce((pre, val) => {
         return pre + val
     }, 0);
 
-    const boardData = menuList.map((menu) => {
-        return <MenuButton onClick={()=>{menuClick(menu)}} menuName={menu.name} stock={menu.stock} />
-    });
-   
+    const addClick = (menu) => {
+        
+
+        // sum.unshift(menu.price)
+        menu.count += 1;
+        
+        // menu.price = test;
+        // menu.price = menu.price * menu.count;
+        // menu.price = selectedPrice;
+        // menu.price = priceAdd(menu.price)
+        // menu.price = priceAdd.price + priceAdd.price;
+        const selectedMenu = menuData.map(data => {
+            return {...data, test}
+        })
+        setTest(menu.price * menu.count)
+        setMenuData(selectedMenu)
+        console.log("test: ", menu)
+        console.log('menu.price: ',test)
+        
+    } 
     return (
         <div className="menu_order">
-            <div className="board_menu">
-                {boardData}
-                {/* <MenuBoard onClick={menuClick} menuList={menuList} /> */}
-            </div>
+            <MenuBoard menuList={menuList} onClick={menuClick} />
             <div className="board_order">
                 <OrderStatus sum={sumPrice} />
-                <div className="head_order">
-                    <div className="item item_menu">메뉴명</div>
-                    <div className="item item_quantity">수량</div>
-                    <div className="item item_price">금액</div>
-                </div>
-                <ul className="order_list">
-                    {menuData.map(menu => {
-                        return (
-                        <li>
-                            <div className="item item_menu">{menu.name}</div>
-                            <div className="item item_quantity">{menu.count}</div>
-                            <div className="item item_price">{menu.price}</div>
-                        </li>
-                        );
-                    })}
-                </ul>
-                {/* <OrderList name={menuName} price={menuPrice} count={count} /> */}
+                <OrderList menuData={menuData} onClick={addClick} sumPrice={test} />
                 <Btn />
             </div>
         </div>
