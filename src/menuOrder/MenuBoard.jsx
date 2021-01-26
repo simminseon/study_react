@@ -1,4 +1,3 @@
-import { values } from "lodash";
 import * as React from "react";
 
 export function MenuBoard({onClick, menuList}) {

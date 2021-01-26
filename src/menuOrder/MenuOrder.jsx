@@ -2,9 +2,8 @@ import * as React from "react";
 import { MenuBoard } from './MenuBoard';
 import { OrderList } from './OrderList';
 import { OrderStatus } from './OrderStatus';
-import { Btn } from './Btn';
+import { OrderBtn } from './OrderBtn';
 import './menuOrder.css'
-import { size, values } from "lodash";
 
 const menuList = [
     {name: '메뉴1', code: 0, price: 5000, stock: true},
@@ -21,23 +20,23 @@ const menuList = [
 
 export function MenuOrder() {
     const [menuData, setMenuData] = React.useState([]);
-    const [selectedPrice, setSelectedPrice] = React.useState([]);
-    const [test, setTest] = React.useState(0);
     const menuClick = (menu) => {
+
         const orderedMenuData = {
             name: menu.name,
             code: menu.code,
             price: menu.price,
-            count: 1
+            count: 1, 
+            sumPrice : menu.price
         }
         
         const existMenuData = menuData.find(data => data.code === orderedMenuData.code)
         if(existMenuData) {
             const checkedMenuData = menuData.map(data => {
-                const addPrice = orderedMenuData.price + data.price;
+                const addPrice = orderedMenuData.sumPrice + data.sumPrice;
 
                 if(data.code === orderedMenuData.code) {
-                    return {...data, count: data.count + 1, price:addPrice}
+                    return {...data, count: data.count + 1, sumPrice:addPrice}
                 } else {
                     return data
                 }
@@ -45,47 +44,43 @@ export function MenuOrder() {
             setMenuData(checkedMenuData)
             // increase count
         } else {
-            // add mneuData
+            // add menuData
             setMenuData([...menuData, orderedMenuData])
         }
-        
-        const priceData = menuData.map(data => data.price)
-        setSelectedPrice([...priceData, orderedMenuData.price])
     }
 
     console.log("menuData: ", menuData)
-    const sumPrice = selectedPrice.reduce((pre, val) => {
+    // 선택된 메뉴의 금액 데이터
+    const selectedSumPriceData = menuData.map(data => data.sumPrice)
+    // 총 금액 계산
+    const resultPrice = selectedSumPriceData.reduce((pre, val) => {
         return pre + val
     }, 0);
 
+    // count up
     const addClick = (menu) => {
-        
-
-        // sum.unshift(menu.price)
         menu.count += 1;
-        
-        // menu.price = test;
-        // menu.price = menu.price * menu.count;
-        // menu.price = selectedPrice;
-        // menu.price = priceAdd(menu.price)
-        // menu.price = priceAdd.price + priceAdd.price;
+        menu.sumPrice = menu.sumPrice + menu.price
         const selectedMenu = menuData.map(data => {
-            return {...data, test}
+            return {...data}
         })
-        setTest(menu.price * menu.count)
         setMenuData(selectedMenu)
-        console.log("test: ", menu)
-        console.log('menu.price: ',test)
-        
+    } 
+    // count down
+    const minusClick = (menu) => {
+        menu.count -= 1;
+        menu.sumPrice = menu.sumPrice - menu.price
+        const selectedMenu = menuData.map(data => {
+            return {...data}
+        })
+        setMenuData(selectedMenu)
     } 
     return (
         <div className="menu_order">
             <MenuBoard menuList={menuList} onClick={menuClick} />
-            <div className="board_order">
-                <OrderStatus sum={sumPrice} />
-                <OrderList menuData={menuData} onClick={addClick} sumPrice={test} />
-                <Btn />
-            </div>
+            <OrderStatus resultPrice={resultPrice} />
+            <OrderList addClick={addClick} minusClick={minusClick} menuData={menuData} />
+            <OrderBtn />
         </div>
     );
 }

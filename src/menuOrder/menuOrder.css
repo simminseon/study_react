@@ -1,0 +1,48 @@
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+blockquote, q{quotes: none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle}
+input::-ms-clear{display:none}
+button{border:0 none;background-color:transparent;cursor:pointer}
+body{background:#fff}
+body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+a{color:#333;text-decoration:none}
+a:active, a:hover{text-decoration:underline}
+a:active{background-color:transparent}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+/* global */
+.ir_caption{overflow:hidden;width:1px;font-size:1px;line-height:0;text-indent:-9999px}
+
+.menu_order{overflow:hidden;width:764px;padding:40px 0;margin:0 auto}
+
+/* 메뉴 목록 */
+.menu_order .board_menu{overflow:hidden;float:left;width:270px;margin-right:50px;border:1px solid #000;background-color:pink}
+.menu_order .board_menu .btn_menu{float:left;width:80px;height:40px;margin:5px;border:1px solid #000;font-size:18px;background-color:#fff}
+.menu_order .board_menu .btn_menu:disabled{background-color:rgba(159, 159, 159, 0.3);color:rgba(16,16,16,0.3)}
+
+/* 주문 목록 */
+.menu_order .item{float:left;padding:0 10px;border-bottom:1px solid #000;font-size:14px;line-height:55px;text-align:center;box-sizing:border-box}
+.menu_order .item + .item{border-left:1px solid #000}
+.menu_order .item_menu{width:160px}
+.menu_order .item_quantity{width:100px}
+.menu_order .item_price{position:relative;width:180px}
+.menu_order .head_order{overflow:hidden;border:1px solid #000;border-bottom:0}
+.menu_order .order_list{overflow:hidden;border-left:1px solid #000;border-right:1px solid #000}
+.menu_order .order_list li{overflow:hidden;list-style:none}
+.menu_order .order_list .item{text-align:left}
+.menu_order .order_list .group_btn{position: absolute;top:0;right:8px}
+.menu_order .order_list .btn_quantity{width:30px;height:30px;margin:0 2px;border:1px solid #000;font-size:20px;background-color:#fff}
+
+/* 주문 상태 */
+.menu_order .order_status{overflow:hidden;padding-bottom:10px}
+.menu_order .order_status .txt_order{font-size:20px}
+.menu_order .order_status .txt_price{font-weight:bold;font-size:22px}
+
+/* 주문 버튼 */
+.menu_order .order_btn{overflow:hidden;padding-top:40px;text-align:center}
+.menu_order .order_btn .btn{width:150px;height:50px;margin:0 5px;border:1px solid #000;font-size:16px;background-color:#fff}
+.menu_order .order_btn .btn_order{background-color:pink}
